@@ -29,7 +29,7 @@ module.exports = async (messageReaction, user) => {
   messageReaction.users.remove(user);
 
   if (hasEveryRole(member, emojiRole.roleIds)) {
-    return member.roles.remove(emojiRole.roleIds);
+    return await member.roles.remove(emojiRole.roleIds);
   }
 
   await member.roles.add(emojiRole.roleIds);
@@ -40,5 +40,5 @@ module.exports = async (messageReaction, user) => {
   const roleIds = removeDuplicates(
     flattenArray(model.emojiRoleMap.map(i => i.roleIds))
   ).filter(roleId => !emojiRole.roleIds.includes(roleId));
-  member.roles.remove(roleIds);
+  await member.roles.remove(roleIds);
 };
