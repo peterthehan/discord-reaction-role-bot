@@ -32,7 +32,7 @@ module.exports = async (messageReaction, user) => {
     return member.roles.remove(emojiRole.roleIds);
   }
 
-  member.roles.add(emojiRole.roleIds);
+  await member.roles.add(emojiRole.roleIds);
   if (!model.isUnique) {
     return;
   }
