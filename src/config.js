@@ -7,9 +7,8 @@ const config = (() => {
 
 module.exports = {
   token: config.TOKEN,
-  models: [
-    {
-      messageId: '523403415171235840',
+  models: {
+    '523403415171235840': {
       channelId: '258314939998011393',
       isUnique: true,
       emojiRoleMap: [
@@ -18,5 +17,5 @@ module.exports = {
         { emoji: '\u0033\u20E3', roleIds: ['349039979219124225'] }
       ]
     }
-  ]
+  }
 };
