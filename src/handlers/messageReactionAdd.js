@@ -1,6 +1,6 @@
 const flattenArray = require('../util/flattenArray');
 const getEmojiKey = require('../util/getEmojiKey');
-const getEmojiRole = require('../util/getEmojiRole');
+const getRoleIds = require('../util/getRoleIds');
 const getMember = require('../util/getMember');
 const getModel = require('../util/getModel');
 const hasEveryRole = require('../util/hasEveryRole');
@@ -12,23 +12,23 @@ module.exports = async (messageReaction, user) => {
   const model = getModel(messageReaction.message);
   if (!model) return;
 
-  const emojiRole = getEmojiRole(getEmojiKey(messageReaction.emoji), model);
-  if (!emojiRole) return;
+  const roleIds = getRoleIds(getEmojiKey(messageReaction.emoji), model);
+  if (!roleIds) return;
 
   const member = await getMember(user, model);
   if (!member) return;
 
   messageReaction.users.remove(user);
 
-  if (hasEveryRole(member, emojiRole.roleIds)) {
-    return await member.roles.remove(emojiRole.roleIds);
+  if (hasEveryRole(member, roleIds)) {
+    return await member.roles.remove(roleIds);
   }
 
-  await member.roles.add(emojiRole.roleIds);
+  await member.roles.add(roleIds);
   if (!model.isUnique) return;
 
-  const roleIds = removeDuplicates(
-    flattenArray(model.emojiRoleMap.map(i => i.roleIds))
-  ).filter(roleId => !emojiRole.roleIds.includes(roleId));
-  await member.roles.remove(roleIds);
+  const roleIdsToRemove = removeDuplicates(
+    flattenArray(Object.values(model.emojiRoleMap))
+  ).filter(roleId => !roleIds.includes(roleId));
+  await member.roles.remove(roleIdsToRemove);
 };
