@@ -1,1 +1,1 @@
-worker: npm run prod
+worker: npm start

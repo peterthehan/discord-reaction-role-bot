@@ -1,12 +1,5 @@
-const config = (() => {
-  const { TOKEN } =
-    process.env.NODE_ENV === 'production' ? process.env : require('../config');
-
-  return { TOKEN };
-})();
-
 module.exports = {
-  token: config.TOKEN,
+  token: ('TOKEN' in process.env ? process.env : require('../config')).TOKEN,
   models: {
     '523403415171235840': {
       channelId: '258314939998011393',
