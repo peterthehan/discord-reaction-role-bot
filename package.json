@@ -5,7 +5,8 @@
   "keywords": [
     "discord",
     "bot",
-    "discord-bot"
+    "discord-bot",
+    "emoji"
   ],
   "homepage": "https://github.com/peterthehan/discord-reaction-role-bot",
   "bugs": {
