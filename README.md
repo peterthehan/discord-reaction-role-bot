@@ -2,9 +2,18 @@
 
 A Discord bot that allows users to self-assign roles using reactions.
 
+<div align="center">
+  <p>
+    <img src="https://raw.githubusercontent.com/peterthehan/discord-reaction-role-bot/master/assets/isUnique.gif" />
+  </p>
+</div>
+
 ## Setup
 
 1. Adapt and follow the steps found in [create-discord-bot](https://github.com/peterthehan/create-discord-bot).
+
+> Don't forget to give your bot the `Manage Roles` permission!
+
 2. Navigate to [src/config.js](https://github.com/peterthehan/discord-reaction-role-bot/blob/master/src/config.js) and add your own emoji-role rules:
 
 ```js
@@ -22,22 +31,8 @@ models: {
 }
 ```
 
-> If `isUnique` is true, the user can only have one emoji-role group at a time. If `isUnique` is false, the user can receive all emoji-roles.
+> If `isUnique` is true, the user can select only one role group at a time (gif above).
 
-> As seen in `EMOJI_3`, an emoji can map to multiple roles.
+> If `isUnique` is false, the user can select as many role groups as they want.
 
-`isUnique` is `true`:
-
-<div align="center">
-  <p>
-    <img src="https://raw.githubusercontent.com/peterthehan/discord-reaction-role-bot/master/assets/isUnique.gif" />
-  </p>
-</div>
-
-`isUnique` is `false`:
-
-<div align="center">
-  <p>
-    <img src="https://raw.githubusercontent.com/peterthehan/discord-reaction-role-bot/master/assets/isNotUnique.gif" />
-  </p>
-</div>
+> An emoji can map to multiple roles (as seen in `EMOJI_3`).
