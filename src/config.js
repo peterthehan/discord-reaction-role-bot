@@ -1,7 +1,7 @@
 module.exports = {
   token: ('TOKEN' in process.env ? process.env : require('../config')).TOKEN,
   rules: {
-    '523403415171235840': {
+    '576631817642442763': {
       channelId: '258314939998011393',
       isUnique: true,
       emojiRoleMap: {
