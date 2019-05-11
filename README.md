@@ -22,7 +22,8 @@ rules: {
     emojiRoleMap: {
       'EMOJI_1': ['ROLE_1_ID'],
       'EMOJI_2': ['ROLE_2_ID'],
-      'EMOJI_3': ['ROLE_3_ID', 'ROLE_4_ID']
+      'EMOJI_3': ['ROLE_3_ID', 'ROLE_4_ID'],
+      // ...Add aas many emoji-role mappings as you want.
     }
   },
   // ...Add as many rules as you want.
@@ -32,5 +33,7 @@ rules: {
 > If `isUnique` is `true`, the user can select only one role group at a time (gif above).
 
 > If `isUnique` is `false`, the user can select as many role groups as they want.
+
+> `EMOJI` can be the unicode value for default emojis or the emoji id for custom emojis.
 
 > An emoji can map to multiple roles (as seen in `EMOJI_3`).
