@@ -12,7 +12,7 @@ A Discord bot that allows users to self-assign roles using reactions.
 
 > Don't forget to give your bot the `Manage Roles` permission!
 
-2. Open [src/config.js](https://github.com/peterthehan/discord-reaction-role-bot/blob/master/src/config.js) and configure your own bot settings:
+2. Open [src/config.js](https://github.com/peterthehan/discord-reaction-role-bot/blob/master/src/config.js) to configure your own settings:
 
 ```js
 rules: {
@@ -36,4 +36,4 @@ rules: {
 
 > `EMOJI` can be the unicode value for default emojis or the emoji id for custom emojis.
 
-> An emoji can map to multiple roles (as seen in `EMOJI_3`).
+> An emoji can map to multiple roles (`EMOJI_3` above).
