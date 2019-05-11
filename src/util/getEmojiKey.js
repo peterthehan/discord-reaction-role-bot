@@ -1,1 +1,1 @@
-module.exports = emoji => (!emoji.id ? emoji.name : emoji.id);
+module.exports = ({ id, name }) => (!id ? name : id);

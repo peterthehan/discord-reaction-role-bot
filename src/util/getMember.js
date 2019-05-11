@@ -1,4 +1,4 @@
-module.exports = async (user, model) => {
-  const channel = await user.client.channels.fetch(model.channelId);
+module.exports = async (user, rule) => {
+  const channel = await user.client.channels.fetch(rule.channelId);
   return channel.guild.members.fetch(user);
 };
