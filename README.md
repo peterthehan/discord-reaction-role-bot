@@ -23,7 +23,7 @@ rules: {
       'EMOJI_1': ['ROLE_1_ID'],
       'EMOJI_2': ['ROLE_2_ID'],
       'EMOJI_3': ['ROLE_3_ID', 'ROLE_4_ID'],
-      // ...Add aas many emoji-role mappings as you want.
+      // ...Add as many emoji-role mappings as you want.
     }
   },
   // ...Add as many rules as you want.
