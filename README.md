@@ -15,7 +15,7 @@ A Discord bot that allows users to self-assign roles using reactions.
 2. Open [src/config.js](https://github.com/peterthehan/discord-reaction-role-bot/blob/master/src/config.js) and add your own emoji-role rules:
 
 ```js
-models: {
+rules: {
   'MESSAGE_ID': {
     channelId: 'CHANNEL_ID',
     isUnique: true,
@@ -29,8 +29,8 @@ models: {
 }
 ```
 
-> If `isUnique` is true, the user can select only one role group at a time (gif above).
+> If `isUnique` is `true`, the user can select only one role group at a time (gif above).
 
-> If `isUnique` is false, the user can select as many role groups as they want.
+> If `isUnique` is `false`, the user can select as many role groups as they want.
 
 > An emoji can map to multiple roles (as seen in `EMOJI_3`).

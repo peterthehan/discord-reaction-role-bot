@@ -1,10 +1,10 @@
-const { models } = require('../config');
+const { rules } = require('../config');
 
 module.exports = async client => {
   console.log(`${client.user.tag}: Ready`);
 
-  for (const messageId of Object.keys(models)) {
-    const { channelId, emojiRoleMap } = models[messageId];
+  for (const messageId of Object.keys(rules)) {
+    const { channelId, emojiRoleMap } = rules[messageId];
 
     const channel = await client.channels.fetch(channelId);
     if (channel.type !== 'text') continue;

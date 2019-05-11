@@ -1,6 +1,6 @@
 module.exports = {
   token: ('TOKEN' in process.env ? process.env : require('../config')).TOKEN,
-  models: {
+  rules: {
     '523403415171235840': {
       channelId: '258314939998011393',
       isUnique: true,

@@ -2,14 +2,14 @@ const flattenArray = require('../util/flattenArray');
 const getEmojiKey = require('../util/getEmojiKey');
 const getRoleIds = require('../util/getRoleIds');
 const getMember = require('../util/getMember');
-const getModel = require('../util/getModel');
+const getRule = require('../util/getRule');
 const hasEveryRole = require('../util/hasEveryRole');
 const removeDuplicates = require('../util/removeDuplicates');
 
 module.exports = async (messageReaction, user) => {
   if (user.bot) return;
 
-  const model = getModel(messageReaction.message);
+  const model = getRule(messageReaction.message);
   if (!model) return;
 
   const roleIds = getRoleIds(getEmojiKey(messageReaction.emoji), model);
