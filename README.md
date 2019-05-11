@@ -3,7 +3,7 @@
 A Discord bot that allows users to self-assign roles using reactions.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/peterthehan/discord-reaction-role-bot/master/assets/isUnique.gif" />
+  <img src="https://raw.githubusercontent.com/peterthehan/discord-reaction-role-bot/master/assets/reactionRole.gif" />
 </div>
 
 ## Setup
