@@ -37,3 +37,9 @@ rules: {
 > `EMOJI` can be the unicode value for default emojis or the emoji id for custom emojis.
 
 > An emoji can map to multiple roles (`EMOJI_3` above).
+
+Visit for more help or information!
+
+<a href="https://discord.gg/WjEFnzC">
+  <img src="https://discordapp.com/api/guilds/258167954913361930/embed.png?style=banner2" title="Discord Server"/>
+</a>
