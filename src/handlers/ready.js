@@ -1,7 +1,8 @@
+const { name } = require('../../package');
 const { rules } = require('../config');
 
 module.exports = async client => {
-  console.log(`${client.user.tag}: Ready`);
+  console.log(`${name}|${client.user.tag}: Ready`);
 
   for (const messageId of Object.keys(rules)) {
     const { channelId, emojiRoleMap } = rules[messageId];
