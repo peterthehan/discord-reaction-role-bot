@@ -1,2 +1,2 @@
 module.exports = (member, roleIds) =>
-  roleIds.every(roleId => member.roles.get(roleId));
+  roleIds.every(roleId => member.roles.cache.has(roleId));
