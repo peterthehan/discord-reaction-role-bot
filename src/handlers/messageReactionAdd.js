@@ -22,15 +22,12 @@ module.exports = async (messageReaction, user) => {
     return await member.roles.remove(roleIdsToAdd);
   }
 
-  if (!rule.isUnique) {
-    return await member.roles.add(roleIdsToAdd);
-  }
-
-  const roleIdsToRemove = [...new Set(Object.values(rule.emojiRoleMap).flat())];
+  const currentRoleIds = member.roles.cache.map(role => role.id);
+  const roleIdsToRemove = rule.isUnique
+    ? [...new Set(Object.values(rule.emojiRoleMap).flat())]
+    : [];
   const roleIdsToSet = [
-    ...member.roles.cache
-      .map(role => role.id)
-      .filter(roleId => !roleIdsToRemove.includes(roleId)),
+    ...currentRoleIds.filter(roleId => !roleIdsToRemove.includes(roleId)),
     ...roleIdsToAdd
   ];
 
