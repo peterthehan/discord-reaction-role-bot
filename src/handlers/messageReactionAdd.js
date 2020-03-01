@@ -8,26 +8,31 @@ module.exports = async (messageReaction, user) => {
   const rule = rules[messageReaction.message.id];
   if (!rule) return;
 
-  const emojiKey = messageReaction.emoji.id
-    ? messageReaction.emoji.id
-    : messageReaction.emoji.name;
-  const roleIds = rule.emojiRoleMap[emojiKey];
-  if (!roleIds) return;
+  const emojiKey =
+    messageReaction.emoji[messageReaction.emoji.id ? 'id' : 'name'];
+  const roleIdsToAdd = rule.emojiRoleMap[emojiKey];
+  if (!roleIdsToAdd) return;
 
   const member = await getMember(user, rule);
   if (!member) return;
 
   messageReaction.users.remove(user);
 
-  if (roleIds.every(roleId => member.roles.cache.has(roleId))) {
-    return await member.roles.remove(roleIds);
+  if (roleIdsToAdd.every(roleId => member.roles.cache.has(roleId))) {
+    return await member.roles.remove(roleIdsToAdd);
   }
 
-  await member.roles.add(roleIds);
-  if (!rule.isUnique) return;
+  if (!rule.isUnique) {
+    return await member.roles.add(roleIdsToAdd);
+  }
 
-  const roleIdsToRemove = [
-    ...new Set(Object.values(rule.emojiRoleMap).flat())
-  ].filter(roleId => !roleIds.includes(roleId));
-  await member.roles.remove(roleIdsToRemove);
+  const roleIdsToRemove = [...new Set(Object.values(rule.emojiRoleMap).flat())];
+  const roleIdsToSet = [
+    ...member.roles.cache
+      .map(role => role.id)
+      .filter(roleId => !roleIdsToRemove.includes(roleId)),
+    ...roleIdsToAdd
+  ];
+
+  return await member.roles.set(roleIdsToSet);
 };
