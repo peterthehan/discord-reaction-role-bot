@@ -8,13 +8,13 @@ A Discord bot that allows users to self-assign roles using reactions.
 
 ## Setup
 
-1. Adapt and follow the steps found in [create-discord-bot](https://github.com/peterthehan/create-discord-bot).
-
-> Follow the [Create Bot](https://github.com/peterthehan/create-discord-bot#create-bot) and [Get Bot](https://github.com/peterthehan/create-discord-bot#get-bot) sections. Remember to replace with the correct project name in step 1 of the [Get Bot](https://github.com/peterthehan/create-discord-bot#get-bot) section!
+1. Follow the instructions in [create-discord-bot](https://github.com/peterthehan/create-discord-bot).
 
 > Don't forget to give your bot the `Manage Roles` permission!
 
-2. Open [src/config.js](https://github.com/peterthehan/discord-reaction-role-bot/blob/master/src/config.js) to configure your own settings:
+2. Download this widget and move it into the [src/widgets](https://github.com/peterthehan/create-discord-bot/blob/master/src/widgets/) folder.
+
+3. Open [config.js](https://github.com/peterthehan/discord-reaction-role-bot/blob/master/config.js) to configure your own settings:
 
 ```js
 rules: {
@@ -38,7 +38,7 @@ rules: {
 
 > `EMOJI` can be the unicode value for default emojis or the emoji id for custom emojis.
 
-> An emoji can map to multiple roles (`EMOJI_3` above).
+> An emoji can map to multiple roles as seen in `EMOJI_3` above.
 
 Visit for more help or information!
 
