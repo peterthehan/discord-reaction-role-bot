@@ -16,7 +16,7 @@ A Discord bot that allows users to self-assign roles using reactions.
 
 2. Download this widget and add it into the [src/widgets](https://github.com/peterthehan/create-discord-bot/tree/master/app/src/widgets) folder.
 
-3. Open [config.js](https://github.com/peterthehan/discord-reaction-role-bot/blob/master/config.json) to configure your own settings:
+3. Open [config.json](https://github.com/peterthehan/discord-reaction-role-bot/blob/master/config.json) to configure your own settings:
 
 ```js
 [
