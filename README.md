@@ -16,29 +16,28 @@ A Discord bot that allows users to self-assign roles using reactions.
 
 2. Download this widget and add it into the [src/widgets](https://github.com/peterthehan/create-discord-bot/tree/master/app/src/widgets) folder.
 
-3. Open [config.js](https://github.com/peterthehan/discord-reaction-role-bot/blob/master/config.js) to configure your own settings:
+3. Open [config.js](https://github.com/peterthehan/discord-reaction-role-bot/blob/master/config.json) to configure your own settings:
 
 ```js
-rules: {
-  'MESSAGE_ID': {
-    channelId: 'CHANNEL_ID',
-    isUnique: true,
-    emojiRoleMap: {
-      'EMOJI_1': ['ROLE_1_ID'],
-      'EMOJI_2': ['ROLE_2_ID'],
-      'EMOJI_3': ['ROLE_3_ID', 'ROLE_4_ID'],
+[
+  {
+    "messageId": "MESSAGE_ID",
+    "channelId": "TEXT_CHANNEL_ID",
+    "isUnique": true,
+    "emojiRoleMap": {
+      "EMOJI_1": ["ROLE_1_ID"],
+      "EMOJI_2": ["ROLE_2_ID"],
+      "EMOJI_3": ["ROLE_3_ID", "ROLE_4_ID"],
       // ...Add as many emoji-role mappings as you want.
     }
   },
   // ...Add as many rules as you want.
-}
+]
 ```
 
-> If `isUnique` is `true`, the user can select only one role group at a time (gif above).
+> If `isUnique` is `true`, the user can select only one role group at a time (gif above). If `false`, the user can select as many role groups as they want.
 
-> If `isUnique` is `false`, the user can select as many role groups as they want.
-
-> `EMOJI` can be the unicode value for default emojis or the emoji id for custom emojis.
+> `EMOJI_N` can be a unicode emoji or an emoji id for custom emojis.
 
 > An emoji can map to multiple roles as seen in `EMOJI_3` above.
 
