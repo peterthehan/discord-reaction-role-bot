@@ -39,18 +39,15 @@ module.exports = async (messageReaction, user) => {
   if (
     user.bot ||
     user.system ||
-    messageReaction.message.channel.type !== "text"
+    messageReaction.message.channel.type !== "text" ||
+    !(messageReaction.message.id in user.client.reactionRoleRules)
   ) {
-    return;
-  }
-
-  const rule = user.client.reactionRoleRules[messageReaction.message.id];
-  if (!rule) {
     return;
   }
 
   await messageReaction.users.remove(user);
 
+  const rule = user.client.reactionRoleRules[messageReaction.message.id];
   const roleIds = rule.emojiRoleMap[getEmoji(messageReaction)];
   if (!roleIds) {
     return;
