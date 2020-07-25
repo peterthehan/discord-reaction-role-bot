@@ -44,7 +44,7 @@ module.exports = async (messageReaction, user) => {
     return;
   }
 
-  const rule = user.client.rules[messageReaction.message.id];
+  const rule = user.client.reactionRoleRules[messageReaction.message.id];
   if (!rule) {
     return;
   }

@@ -3,9 +3,9 @@ const rules = require("../config");
 module.exports = async (client) => {
   console.log("reactionRole: ready");
 
-  client.rules = {};
+  client.reactionRoleRules = {};
   for (const rule of rules) {
-    client.rules[rule.messageId] = rule;
+    client.reactionRoleRules[rule.messageId] = rule;
     const channel = await client.channels.fetch(rule.channelId);
     const message = await channel.messages.fetch(rule.messageId);
 
