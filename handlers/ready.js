@@ -1,19 +1,16 @@
-const { rules } = require('../config');
+const rules = require("../config");
 
-module.exports = async client => {
-  console.log('reactionRole: ready');
+module.exports = async (client) => {
+  console.log("reactionRole: ready");
 
-  for (const messageId of Object.keys(rules)) {
-    const { channelId, emojiRoleMap } = rules[messageId];
+  client.rules = {};
+  for (const rule of rules) {
+    client.rules[rule.messageId] = rule;
+    const channel = await client.channels.fetch(rule.channelId);
+    const message = await channel.messages.fetch(rule.messageId);
 
-    const channel = await client.channels.fetch(channelId);
-    if (channel.type !== 'text') continue;
-
-    const message = await channel.messages.fetch(messageId);
-    if (!message) continue;
-
-    Object.keys(emojiRoleMap).forEach(
-      async emoji => await message.react(emoji)
+    Object.keys(rule.emojiRoleMap).forEach(
+      async (emoji) => await message.react(emoji)
     );
   }
 };
