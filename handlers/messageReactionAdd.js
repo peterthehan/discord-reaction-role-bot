@@ -4,25 +4,17 @@ const getEmoji = (messageReaction) => {
 
 const getMember = async (rule, user) => {
   const channel = await user.client.channels.fetch(rule.channelId);
-  if (!channel) {
-    return;
-  }
 
-  const member = await channel.guild.members.fetch(user);
-  if (!member) {
-    return;
-  }
-
-  return member;
+  return channel && channel.guild.members.fetch(user);
 };
 
 const assignRoles = async (rule, roleIds, member) => {
   if (roleIds.every((roleId) => member.roles.cache.has(roleId))) {
-    return await member.roles.remove(roleIds);
+    return member.roles.remove(roleIds);
   }
 
   if (!rule.isUnique) {
-    return await member.roles.add(roleIds);
+    return member.roles.add(roleIds);
   }
 
   const currentRoleIds = member.roles.cache.map((role) => role.id);
@@ -32,7 +24,7 @@ const assignRoles = async (rule, roleIds, member) => {
     ...roleIds,
   ];
 
-  return await member.roles.set(roleIdsToSet);
+  return member.roles.set(roleIdsToSet);
 };
 
 module.exports = async (messageReaction, user) => {
@@ -45,7 +37,7 @@ module.exports = async (messageReaction, user) => {
     return;
   }
 
-  await messageReaction.users.remove(user);
+  messageReaction.users.remove(user);
 
   const rule = user.client.reactionRoleRules[messageReaction.message.id];
   const roleIds = rule.emojiRoleMap[getEmoji(messageReaction)];
@@ -58,5 +50,5 @@ module.exports = async (messageReaction, user) => {
     return;
   }
 
-  await assignRoles(rule, roleIds, member);
+  assignRoles(rule, roleIds, member);
 };
