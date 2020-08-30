@@ -27,7 +27,7 @@ A Discord bot that allows users to self-assign roles using reactions.
     "emojiRoleMap": {
       "EMOJI_1": ["ROLE_1_ID"],
       "EMOJI_2": ["ROLE_2_ID"],
-      "EMOJI_3": ["ROLE_3_ID", "ROLE_4_ID"],
+      "EMOJI_3": ["ROLE_3_ID", "ROLE_4_ID", "ROLE_5_ID"],
       // ...Add as many emoji-role mappings as you want.
     }
   },
@@ -35,11 +35,31 @@ A Discord bot that allows users to self-assign roles using reactions.
 ]
 ```
 
-> If `isUnique` is `true`, the user can select only one role group at a time (gif above). If `false`, the user can select as many role groups as they want.
+- `isUnique` determines whether the user can select only one role group at a time (`true`) or as many role groups as they want (`false`).
 
-> `EMOJI_N` can be a unicode emoji or an emoji id for custom emojis.
+  > The demo gif above has `isUnique` set to `true`.
 
-> An emoji can map to multiple roles as seen in `EMOJI_3` above.
+- `EMOJI` can be:
+
+  - A unicode emoji. https://emojipedia.org is a good reference to copy and paste from.
+
+  ```js
+  "emojiRoleMap": {
+    "😳": ["ROLE_1_ID"],
+    "🥺": ["ROLE_2_ID"]
+  }
+  ```
+
+  - An emoji id for custom emojis. You can get a custom emoji's ID by sending `\:YourCustomEmoji:` in chat (prefix a backslash `\` character in front of your desired emoji).
+
+  ```js
+  "emojiRoleMap": {
+    "716344914706694165": ["ROLE_1_ID"],
+    "622635442013208589": ["ROLE_2_ID"]
+  }
+  ```
+
+- An emoji can map to multiple roles.
 
 Visit for more help or information!
 
