@@ -61,6 +61,8 @@ A Discord bot that allows users to self-assign roles using reactions.
 
 - An emoji can map to multiple roles.
 
+4. `npm start` to run the bot.
+
 Visit for more help or information!
 
 <a href="https://discord.gg/WjEFnzC">
