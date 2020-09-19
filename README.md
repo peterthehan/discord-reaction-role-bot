@@ -50,7 +50,7 @@ A Discord bot that allows users to self-assign roles using reactions.
   }
   ```
 
-  - An emoji id for custom emojis. You can get a custom emoji's ID by sending `\:YourCustomEmoji:` in chat (prefix a backslash `\` character in front of your desired emoji).
+  - An emoji ID for custom emojis. You can get a custom emoji's ID by sending `\:YourCustomEmoji:` in chat (prefix a backslash `\` character in front of your desired emoji).
 
   ```js
   "emojiRoleMap": {
