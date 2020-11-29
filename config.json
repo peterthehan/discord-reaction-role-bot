@@ -1,8 +1,9 @@
 [
   {
-    "messageId": "632674590849630219",
+    "messageId": "781290775265804288",
     "channelId": "258314939998011393",
-    "isUnique": true,
+    "removeReaction": true,
+    "policy": "unique",
     "emojiRoleMap": {
       "🎉": ["542138999511187486"]
     }

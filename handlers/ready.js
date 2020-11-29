@@ -1,5 +1,12 @@
+// eslint-disable-next-line no-unused-vars
+const { Client } = require("discord.js");
 const rules = require("../config");
 
+/**
+ * @function
+ * @param {Client} client
+ * @returns {Promise<void>}
+ */
 module.exports = async (client) => {
   console.log("reactionRole: ready");
 
