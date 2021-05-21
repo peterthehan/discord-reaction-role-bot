@@ -46,14 +46,14 @@ A Discord bot that allows users to self-assign roles using reactions.
      - `any`: User can react and claim as many roles as they want.
      - `unique` (default): User can react and claim only one emoji's set of roles at a time.
 
-   - `emojiRoleMap` is a key-value map between emoji and role ids. An emoji can be:
+   - `emojiRoleMap` is a _one-to-many_ key-value map between emoji and role ids. An emoji can be:
 
      - A unicode emoji. https://emojipedia.org is a good reference to copy and paste from.
 
        ```json
          "emojiRoleMap": {
            "😳": ["ROLE_1_ID"],
-           "🥺": ["ROLE_2_ID"]
+           "🥺": ["ROLE_2_ID", "ROLE_3_ID", "ROLE_4_ID"]
          }
        ```
 
@@ -62,7 +62,7 @@ A Discord bot that allows users to self-assign roles using reactions.
        ```json
        "emojiRoleMap": {
          "716344914706694165": ["ROLE_1_ID"],
-         "622635442013208589": ["ROLE_2_ID"]
+         "622635442013208589": ["ROLE_2_ID", "ROLE_3_ID", "ROLE_4_ID"]
        }
        ```
 
