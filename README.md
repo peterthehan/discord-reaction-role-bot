@@ -24,12 +24,14 @@ A Discord bot that allows users to self-assign roles using reactions.
    ```json
    [
      {
-       "messageId": "781290775265804288",
+       "messageId": "858190737065902101",
        "channelId": "258314939998011393",
        "removeReaction": true,
-       "policy": "unique",
+       "policy": "any",
        "emojiRoleMap": {
-         "🎉": ["542138999511187486"]
+         "🤖": ["858186589187735565"],
+         "🎉": ["542138999511187486"],
+         "🥤": ["785794153089990688"]
        }
      }
    ]
