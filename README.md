@@ -17,19 +17,21 @@ A Discord bot that allows users to self-assign roles using reactions.
 
    > Don't forget to give your bot the `Manage Roles` permission!
 
-2. Download this widget and move the `src-discord-reaction-role-bot` folder into the [src/widgets/](https://github.com/peterthehan/create-discord-bot/tree/master/app/src/widgets) folder created in step 1.
+2. Download this bot and move the `src-discord-reaction-role-bot` folder into the [/src/bots](https://github.com/peterthehan/create-discord-bot/tree/master/src/bots) folder from step 1.
 
-3. Open [config.json](https://github.com/peterthehan/discord-reaction-role-bot/blob/master/src-discord-reaction-role-bot/config.json) to configure your own settings:
+3. Open [config.json](./src-discord-reaction-role-bot/config.json) to configure your own settings:
 
    ```json
    [
      {
-       "messageId": "781290775265804288",
+       "messageId": "858190737065902101",
        "channelId": "258314939998011393",
        "removeReaction": true,
-       "policy": "unique",
+       "policy": "any",
        "emojiRoleMap": {
-         "🎉": ["542138999511187486"]
+         "🤖": ["858186589187735565"],
+         "🎉": ["542138999511187486"],
+         "🥤": ["785794153089990688"]
        }
      }
    ]
@@ -71,5 +73,5 @@ A Discord bot that allows users to self-assign roles using reactions.
 Visit for more help or information!
 
 <a href="https://discord.gg/WjEFnzC">
-  <img src="https://discordapp.com/api/guilds/258167954913361930/embed.png?style=banner2" title="Discord Server"/>
+  <img src="https://discord.com/api/guilds/258167954913361930/embed.png?style=banner2" title="Discord Server"/>
 </a>
