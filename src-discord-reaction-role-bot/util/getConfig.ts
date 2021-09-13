@@ -1,9 +1,9 @@
-import { Message, Snowflake } from "discord.js";
+import { Message } from "discord.js";
 import configs from "../config.json";
 import { Config } from "../types";
 
-const configMap: Map<Snowflake, Config> = new Map();
-(configs as Config[]).forEach((config) => {
+const configMap = new Map();
+configs.forEach((config) => {
   configMap.set(config.messageId, config);
 });
 
