@@ -15,7 +15,7 @@ A Discord bot that allows users to self-assign roles using reactions.
 
 1. Follow the instructions in [create-discord-bot](https://github.com/peterthehan/create-discord-bot).
 
-   > Don't forget to give your bot the `Manage Roles` permission!
+   > Don't forget to give your bot the `Manage Roles` and `Manage Messages` permissions (only grant the latter if the bot should handle reactions)!
 
 2. Download this bot and move the `src-discord-reaction-role-bot` folder into the [/src/bots](https://github.com/peterthehan/create-discord-bot/tree/master/src/bots) folder from step 1.
 
